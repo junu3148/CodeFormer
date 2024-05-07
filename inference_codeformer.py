@@ -61,7 +61,7 @@ if __name__ == '__main__':
             help='Input image, video or folder. Default: inputs/whole_imgs')
     parser.add_argument('-o', '--output_path', type=str, default=None, 
             help='Output folder. Default: results/<input_name>_<w>')
-    parser.add_argument('-w', '--fidelity_weight', type=float, default=0.5, 
+    parser.add_argument('-w', '--fidelity_weight', type=float, default=1, 
             help='Balance the quality and fidelity. Default: 0.5')
     parser.add_argument('-s', '--upscale', type=int, default=2, 
             help='The final upsampling scale of the image. Default: 2')
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     parser.add_argument('--detection_model', type=str, default='retinaface_resnet50', 
             help='Face detector. Optional: retinaface_resnet50, retinaface_mobile0.25, YOLOv5l, YOLOv5n, dlib. \
                 Default: retinaface_resnet50')
-    parser.add_argument('--bg_upsampler', type=str, default='None', help='Background upsampler. Optional: realesrgan')
+    parser.add_argument('--bg_upsampler', type=str, default='realesrgan', help='Background upsampler. Optional: realesrgan')
     parser.add_argument('--face_upsample', action='store_true', help='Face upsampler after enhancement. Default: False')
     parser.add_argument('--bg_tile', type=int, default=400, help='Tile size for background sampler. Default: 400')
     parser.add_argument('--suffix', type=str, default=None, help='Suffix of the restored faces. Default: None')
